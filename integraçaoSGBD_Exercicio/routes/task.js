@@ -58,7 +58,7 @@ router.put('/:id', async (req, res) => {
   }
 });
 
-//Excluir um post pelo id
+//Excluir uma task pelo id
 router.delete('/:id', async(req, res) => {
   await taskService.deleteTaskById(req.params.id);
   res.json({mensagem: "task excluída com sucesso!"});
