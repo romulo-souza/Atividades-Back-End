@@ -1,6 +1,4 @@
 const express = require('express');
-const path = require('path');
-const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const { sequelize } = require('./model/bd'); // Importar o sequelize para inicializar o banco de dados
 
@@ -30,8 +28,6 @@ sequelize.sync() // sync() -> Sincroniza os modelos definidos com o banco de dad
 app.use(logger('dev'));
 app.use(express.json()); 
 app.use(express.urlencoded({ extended: false })); 
-app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
 
 // Definição das rotas
 var taskRouter = require('./routes/task');
